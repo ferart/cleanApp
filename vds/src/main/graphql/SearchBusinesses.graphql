@@ -1,0 +1,17 @@
+query SearchBusiness($location: String! $term: String!, $limit: Int!){
+    search(location: $location, term: $term, limit: $limit, sort_by: "rating"){
+        business{
+            name
+            alias
+            rating
+            review_count
+            photos
+            categories{
+                alias
+            }
+            location{
+                formatted_address
+            }
+        }
+    }
+}
